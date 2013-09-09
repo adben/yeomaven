@@ -1,40 +1,86 @@
 package com.github.adben.yeomaven;
 
 public class Book {
-    private Integer isbn;
-    private String title;
-    private String author;
+    private final double isbn;
+    private final double price;
+    private final String author;
+    private final String title;
+    private final String engTitle;
+    private final String imagePath;
 
-    public Book() {
+    public Book(BookBuilder builder) {
+        this.isbn = builder.isbn;
+        this.title = builder.title;
+        this.engTitle = builder.engTitle;
+        this.author = builder.author;
+        this.price = builder.price;
+        this.imagePath = builder.imagePath;
     }
 
-    public Book(Integer isbn, String title, String author) {
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
+    public String getEngTitle() {
+        return engTitle;
     }
 
-    public String getTitle() {
-        return title;
+    public double getIsbn() {
+        return isbn;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public double getPrice() {
+        return price;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public String getTitle() {
+        return title;
     }
 
-    public Integer getIsbn() {
-        return isbn;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setIsbn(Integer isbn) {
+    public static class BookBuilder {
+        private double isbn;
+        private double price;
+        private String author;
+        private String title;
+        private String engTitle;
+        private String imagePath;
 
+        public BookBuilder withIsbn(double i) {
+            this.isbn = i;
+            return this;
+        }
+
+        public BookBuilder withPrice(long p) {
+            this.price = p;
+            return this;
+        }
+
+        public BookBuilder withAuthor(String a) {
+            this.author = a;
+            return this;
+        }
+
+        public BookBuilder withTitle(String t) {
+            this.title = t;
+            return this;
+        }
+
+        public BookBuilder withEnglishTitle(String e) {
+            this.engTitle = e;
+            return this;
+        }
+
+        public BookBuilder withImagePath(String img) {
+            this.imagePath = img;
+            return this;
+        }
+
+        public Book build() {
+            return new Book(this);
+        }
     }
 }

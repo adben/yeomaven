@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('yoApp')
-  .controller('MainCtrl', ['$scope', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  }]);
+    .controller('MainCtrl', function ($scope, $resource) {
+        var Book = $resource('./rest/books/:isbn');
+        $scope.books = Book.query();
+    });

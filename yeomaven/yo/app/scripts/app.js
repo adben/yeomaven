@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoApp', ['ngResource'])
+angular.module('yoApp', ['ngResource', 'ui'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

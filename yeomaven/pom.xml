@@ -13,7 +13,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
-    <jersey-version>1.17</jersey-version>
+    <jersey-version>1.8</jersey-version>
     <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
     <maven-war-plugin.version>2.3</maven-war-plugin.version>
     <yeoman-maven-plugin.version>0.1</yeoman-maven-plugin.version>
@@ -73,6 +73,22 @@
               <directory>yo/node_modules</directory>
             </fileset>
           </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>8.1.12.v20130726</version>
+        <configuration>
+          <stopKey>foo</stopKey>
+          <stopPort>8000</stopPort>
+          <reload>manual</reload>
+          <webAppConfig>
+            <contextPath>/${project.name}</contextPath>
+            <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+              <resourcesAsCSV>src/main/webapp,yo/dist</resourcesAsCSV>
+            </baseResource>
+          </webAppConfig>
         </configuration>
       </plugin>
     </plugins>

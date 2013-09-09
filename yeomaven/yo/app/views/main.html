@@ -1,17 +1,15 @@
 <div class="hero-unit">
     <h1>Books</h1>
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-        <td>ISBN</td>
-        <td>Title</td>
-        <td>Author</td>
-        </thead>
-        <tbody>
-        <tr ng-repeat="book in books">
-            <td>{{book.isbn}}</td>
-            <td>{{book.title}}</td>
-            <td>{{book.author}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div ui-sortable>
+        <div class="row-fluid" ng-repeat="book in books">
+            <div class="span6">
+                ISBN:{{book.isbn}}
+                <div class="row-fluid">
+                    <div class="span6">Title: {{book.title}}</div>
+                    <div class="span6">Author: {{book.author}}</div>
+                </div>
+            </div>
+            <div class="span6">foto: {{book.author}}</div>
+        </div>
+    </div>
 </div>

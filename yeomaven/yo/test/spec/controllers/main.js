@@ -1,5 +1,7 @@
 'use strict';
 
+var $httpBackend;
+
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
@@ -9,7 +11,8 @@ describe('Controller: MainCtrl', function () {
     scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
+    $httpBackend.whenGET('./rest/books').respond([]);
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
@@ -19,4 +22,5 @@ describe('Controller: MainCtrl', function () {
   it('should attach a list of awesomeThings to the scope', function () {
     expect(scope.awesomeThings.length).toBe(3);
   });
-});
+})
+;

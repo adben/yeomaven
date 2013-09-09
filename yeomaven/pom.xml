@@ -17,6 +17,7 @@
     <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
     <maven-war-plugin.version>2.3</maven-war-plugin.version>
     <yeoman-maven-plugin.version>0.1</yeoman-maven-plugin.version>
+    <guava.version>14.0</guava.version>
   </properties>
 
   <build>
@@ -95,6 +96,11 @@
   </build>
 
   <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
     <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-server</artifactId>

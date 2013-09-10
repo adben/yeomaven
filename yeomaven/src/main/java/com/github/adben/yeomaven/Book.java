@@ -2,7 +2,7 @@ package com.github.adben.yeomaven;
 
 public class Book {
     private final double isbn;
-    private final double price;
+    private final long price;
     private final String author;
     private final String title;
     private final String engTitle;
@@ -43,7 +43,7 @@ public class Book {
 
     public static class BookBuilder {
         private double isbn;
-        private double price;
+        private long price;
         private String author;
         private String title;
         private String engTitle;

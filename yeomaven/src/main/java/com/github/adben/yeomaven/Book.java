@@ -25,7 +25,7 @@ public class Book {
         return isbn;
     }
 
-    public double getPrice() {
+    public long getPrice() {
         return price;
     }
 

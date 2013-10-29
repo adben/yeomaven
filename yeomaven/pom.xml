@@ -6,7 +6,7 @@
   <groupId>com.github.adben.yeomaven</groupId>
   <artifactId>yeomaven</artifactId>
   <packaging>war</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>yeomaven</name>
 
   <properties>
